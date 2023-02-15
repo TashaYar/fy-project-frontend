@@ -133,29 +133,40 @@ export const CardsRow = styled.div`
   justify-content: center;
   margin-top: 3em;
   margin-bottom: 1em;
-
+  padding-block: 2%;
   .card {
     //padding: 1rem !important;
     display: flex;
     flex-direction: column;
     border-radius: 1.2em;
     width: 45%;
-
-    border: 1px solid #eaeaea;
-
     scale: 0.99;
-    transition: scale 150ms linear;
+    transition: all 0.2s;
     cursor: pointer;
-
-    &:hover {
-      scale: 1.05;
-    }
-
-    img {
+    .img-div {
+      width: 100%;
       height: 10em;
+      overflow: hidden;
       border-top-left-radius: 1.2em;
       border-top-right-radius: 1.2em;
+      img {
+        width: 100%;
+        border-top-left-radius: 1.2em;
+        border-top-right-radius: 1.2em;
+        height: 100%;
+
+        transition: all 0.2s;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
+
+    &:hover {
+      //transform: scale(1.1);
+      box-shadow: 8px -4px 50px -7px rgba(154, 205, 50, 0.62);
+    }
+
     .card-text {
       padding: 1em;
       h2 {

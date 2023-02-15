@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -49,6 +49,7 @@ const Login = () => {
           verifyPass(e.target.value);
         }}
       />
+      <Button variant="contained">Log In</Button>
     </Form>
   );
 };
@@ -63,6 +64,13 @@ const Form = styled.div`
   box-sizing: border-box;
   gap: 2.5em;
   margin-top: 2em;
+  Button {
+    align-self: center;
+    background-color: ${(props) => props.theme.colorPrimary};
+    &:hover {
+      background-color: ${(props) => props.theme.colorPrimary};
+    }
+  }
 `;
 
 const StyledInput = styled(TextField)`
