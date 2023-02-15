@@ -9,9 +9,11 @@ import card3img from "../../Images/card3.jpg";
 import Footer from "../Footer/Footer.js";
 import Modal from "../Modal/Modal.js";
 import Login from "../LogIn/Login.js";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -54,7 +56,13 @@ const Main = () => {
             </div>
             <div className="textbelowsearchrow">
               <p>Register your kitchen with us.</p>
-              <button>Register</button>
+              <button
+                onClick={(e) => {
+                  navigate("/register");
+                }}
+              >
+                Register
+              </button>
             </div>
           </div>
         </LeftColumn>
