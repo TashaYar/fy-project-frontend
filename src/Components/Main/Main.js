@@ -3,7 +3,10 @@ import sideimg from "../../Images/sideimage2.jpg";
 import React, { useState } from "react";
 import logo from "../../Images/logo.png";
 import { CardsRow, Container, LeftColumn, RightColumn } from "./Main.styles.js";
-import kitchenimg from "/home/pallavi/Documents/fy-project/src/Images/kitchen.jpg";
+import card1img from "../../Images/healthy.jpg";
+import card2img from "../../Images/card2.jpg";
+import card3img from "../../Images/card3.jpg";
+import Footer from "../Footer/Footer.js";
 import Modal from "../Modal/Modal.js";
 import Login from "../LogIn/Login.js";
 
@@ -63,21 +66,40 @@ const Main = () => {
       <div className="row">
         <CardsRow>
           <div className="card">
-            <img src={kitchenimg} alt="card-imgae"></img>
+            <div className="img-div">
+              <img src={card1img} alt="card-imgae" />
+            </div>
             <div className="card-text">
-              <h2>Order Online</h2>
-              <p>Stay home and enjoy your food by ordering it online.</p>
+              <h2>Eat healthy and tasty</h2>
+              <p>
+                Enjoy nutritious and delicious meals by incorporating fresh
+                produce and wholesome ingredients into your diet. Make healthy
+                eating a tasty experience.
+              </p>
             </div>
           </div>
           <div className="card">
-            <img src={kitchenimg} alt="card-imgae"></img>
+            <div className="img-div">
+              <img src={card2img} alt="card-imgae" />
+            </div>
+
             <div className="card-text">
-              <h2>Order Online</h2>
-              <p>Stay home and enjoy your food by ordering it online.</p>
+              <h2>Vocal for Local</h2>
+              <p>You can promote local restaurants to grow thier business</p>
+            </div>
+          </div>
+          <div className="card">
+            <div className="img-div">
+              <img src={card3img} alt="card-imgae" />
+            </div>
+            <div className="card-text">
+              <h2>Excluisve Perks</h2>
+              <p>Explore our kitchens</p>
             </div>
           </div>
         </CardsRow>
       </div>
+      <Footer></Footer>
     </Container>
   );
 };
