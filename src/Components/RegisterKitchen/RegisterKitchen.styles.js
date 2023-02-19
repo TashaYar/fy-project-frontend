@@ -21,7 +21,8 @@ export const Container = styled.div`
   }
 `;
 export const LeftReg = styled.div`
-  width: 40%;
+  width: 50%;
+  margin: auto;
   .left-side-register {
     width: 80%;
     margin-inline: auto;
@@ -33,8 +34,11 @@ export const LeftReg = styled.div`
   }
 `;
 export const RightReg = styled.div`
-  width: 60%;
+  width: 50%;
   height: 100%;
+
   img {
+    height: auto;
+    max-width: 100%;
   }
 `;
