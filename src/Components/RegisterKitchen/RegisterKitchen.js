@@ -1,15 +1,16 @@
 //react arrow function export rafce
-import React from "react";
+import React, { useState } from "react";
 import { Container, LeftReg, RightReg } from "./RegisterKitchen.styles";
 import reg from "../../Images/reg.jpg";
 import TextField from "@material-ui/core/TextField";
 import FormControl from "@material-ui/core/FormControl";
-import { Select, MenuItem, InputLabel } from "@material-ui/core";
+import { MenuItem } from "@material-ui/core";
 import InputAdornment from "@mui/material/InputAdornment";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { Email, Phone } from "@mui/icons-material";
-import Box from "@mui/material/Box";
 const RegisterKitchen = () => {
+  const [value, setValue] = useState("");
+
   return (
     <Container>
       <div className="row">
@@ -23,59 +24,63 @@ const RegisterKitchen = () => {
               </p>
             </div>
             <div>
-              <Box
-                sx={{
-                  display: "grid",
-                  gridTemplateColumns: "270px 270px",
-                  gridGap: 10,
-                }}
-              >
-                <FormControl fullWidth>
-                  <InputLabel id="demo-simple-select-label">
-                    Cuisine Type
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    variant="outlined"
-                  >
-                    <MenuItem>Chinese</MenuItem>
-                    <MenuItem>Indian</MenuItem>
-                    <MenuItem>Italian</MenuItem>
-                  </Select>
+              <FormControl>
+                <TextField
+                  value={value}
+                  onChange={(e) => setValue(e.target.value)}
+                  select
+                  label="Restaurant Type"
+                  variant="filled"
+                >
+                  <MenuItem key={1} value="test">
+                    Chinese
+                  </MenuItem>
+                  <MenuItem key={2} value="test2">
+                    Indian
+                  </MenuItem>
+                  <MenuItem key={3} value="test3">
+                    Italian
+                  </MenuItem>
+                </TextField>
 
-                  <TextField
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <PersonOutlineOutlinedIcon />
-                        </InputAdornment>
-                      ),
-                    }}
-                    variant="standard"
-                    label="Restaurant Name"
-                  />
-                  <Email />
-                  <TextField
-                    hiddenLabel
-                    variant="filled"
-                    label="Email"
-                    type={Email}
-                  />
-                  <TextField
-                    variant="standard"
-                    label="Phone no."
-                    type={Phone}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Phone />
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </FormControl>
-              </Box>
+                <TextField
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <PersonOutlineOutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                  variant="filled"
+                  type={Text}
+                  label="Restaurant Name"
+                />
+
+                <TextField
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Email />
+                      </InputAdornment>
+                    ),
+                  }}
+                  variant="filled"
+                  label="Email"
+                  type={Email}
+                />
+                <TextField
+                  variant="filled"
+                  label="Phone no."
+                  type={Phone}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <Phone />
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </FormControl>
             </div>
           </div>
         </LeftReg>
